@@ -82,7 +82,7 @@ maskBox.getCenter(maskCenter);
 // ✅ 2. GLB 모델 불러오기 + 마스크 적용
 //
 const ktx2Loader = new KTX2Loader()
-  .setTranscoderPath("/basis/")
+  .setTranscoderPath("./basis/")
   .detectSupport(renderer);
 
 const loader = new GLTFLoader();
