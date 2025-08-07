@@ -1,0 +1,18 @@
+{
+  "name": "glb-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.0.6"
+  },
+  "dependencies": {
+    "dat.gui": "^0.7.9",
+    "three": "^0.179.1"
+  }
+}
