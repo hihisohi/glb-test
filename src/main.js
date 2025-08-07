@@ -89,7 +89,7 @@ const loader = new GLTFLoader();
 loader.setKTX2Loader(ktx2Loader);
 
 loader.load(
-  "/assets/glb/landing-2048.glb",
+  "./assets/glb/landing-2048.glb",
   (gltf) => {
     const model = gltf.scene;
     model.scale.set(1, 1, 1);
