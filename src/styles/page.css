@@ -1,0 +1,64 @@
+.thePage {
+  pointer-events: none;
+}
+
+.homePage {
+  position: relative;
+  overflow: hidden;
+}
+
+.homePage .ref {
+  pointer-events: none;
+  position: relative;
+}
+
+.homePage .heroRef {
+  height: 100vh;
+}
+
+.homePage .projectIntroRef {
+  height: 150vh;
+}
+
+.homePage .projectStoryRef {
+  height: 212rem;
+}
+
+.homePage .collectionIntroRef {
+  height: 120vh;
+}
+
+.homePage .collectionGalleryRef {
+  height: 150vh;
+}
+
+.homePage .keepRef {
+  height: 270vh;
+}
+
+.homePage .keepRef .keepScrollTo {
+  position: absolute;
+  top: 50vh;
+}
+
+.homePage .factionRef {
+  height: 120vh;
+}
+
+.homePage .factionRef .factionScrollTo {
+  position: absolute;
+  top: 50vh;
+}
+
+.homePage .universeRef {
+  height: 120vh;
+}
+
+.homePage .universeRef .universeScrollTo {
+  position: absolute;
+  top: 50vh;
+}
+
+.homePage .launchRef {
+  height: 150vh;
+}
