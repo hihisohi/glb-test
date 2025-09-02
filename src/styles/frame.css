@@ -6,7 +6,7 @@
   height: 100vh;
   pointer-events: none;
   width: 100%;
-  z-index: 100;
+  z-index: var(--z-frame);
 
   align-items: center;
   display: flex;
@@ -20,7 +20,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: var(--z-frame);
 
   width: 100%;
   height: 100vh;
@@ -50,7 +50,7 @@
   width: 100%;
   height: 100%;
 
-  padding: 20px;
+  padding: var(--menu-pad);
 }
 
 .content {
@@ -68,14 +68,14 @@
   height: 100%;
 
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
+  border-radius: var(--menu-radius);
 }
 
 .top {
   align-items: center;
   display: flex;
   flex-direction: row;
-  height: 51px;
+  height: var(--menu-height);
   justify-content: center;
   position: relative;
 }
@@ -87,7 +87,7 @@
   height: 100%;
   justify-content: center;
   position: relative;
-  width: 67px;
+  width: var(--menu-width);
 }
 
 .hamburger button {
@@ -96,7 +96,7 @@
 
   align-items: center;
   border: 1px solid transparent;
-  border-radius: 10px 0 0 0;
+  border-radius: var(--menu-radius) 0 0 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -141,7 +141,7 @@
   align-items: center;
   background: #fff;
   border: none;
-  border-radius: 10px 10px 0 10px;
+  border-radius: var(--menu-radius) var(--menu-radius) 0 var(--menu-radius);
   -webkit-clip-path: polygon(
     0 0,
     100% 0,
@@ -220,7 +220,7 @@
   left: 0;
   position: absolute;
   top: 0;
-  width: 67px;
+  width: var(--menu-width);
 
   align-items: center;
   display: flex;

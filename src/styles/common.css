@@ -1,21 +1,122 @@
 :root {
   --font-ibm-plex-mono: "IBM Plex Mono", monospace;
   --font-kanit: "Kanit", sans-serif;
+  --font-commissioner: "Commissioner", sans-serif;
+
+  --menu-width: 67px;
+  --menu-height: 51px;
+  --menu-pad: 20px;
+  --menu-radius: 10px;
+  --menu-submenu: 0px;
+  --menu-top: calc(var(--menu-pad) + var(--menu-height));
+  --menu-bottom: calc(var(--menu-pad));
+  --menu-left: calc(var(--menu-pad) + var(--menu-width));
+  --menu-right: calc(var(--menu-pad));
+
+  --sideMargin: var(--menu-pad, 2rem);
+  --headerHeight: var(--menu-height, 5rem);
+  --sideNavWidth: var(--menu-width, 7rem);
+  --btnHeight: 4rem;
+  --blockPadding: 4rem;
+  --borderRadius: 1rem;
+  --topMargin: calc(var(--sideMargin) + var(--headerHeight));
+
+  --z-frame: 100;
+  --z-footer: 200;
 }
 
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: none;
+  font-size: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: clamp(8.5333333333px, 2.6666666667vw, 27.28px);
+    min-height: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: clamp(6.4px, 0.625vw, 12px);
+    min-height: 0;
+  }
+}
+
+html.remlock {
+  font-size: 10px !important;
 }
 
 html,
 body {
   font-family: var(--font-kanit);
-  font-size: 10px;
 }
 
 .canvas-container {
   position: fixed;
   inset: 0;
+}
+
+.ui-container {
+  color: #fff;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  clip-path: inset(var(--topMargin) 0 var(--sideMargin) 0);
+}
+
+.sectionInner {
+  padding: var(--sideMargin);
+  padding-top: calc(var(--sideMargin) + var(--headerHeight));
+}
+
+@media only screen and (max-width: 767px) {
+  .sectionInner {
+    padding-bottom: var(--sideMargin);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .sectionInner {
+    padding-left: calc(var(--sideMargin) + var(--sideNavWidth));
+  }
+}
+
+.type-body1 {
+  font-feature-settings: "zero" on;
+  font-family: var(--font-kanit);
+  font-size: 1.5rem;
+  font-variation-settings: "opsz" 0;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.type-caption3 {
+  font-feature-settings: "zero" on;
+  font-family: var(--font-ibm-plex-mono);
+  font-size: 1rem;
+  font-variation-settings: "opsz" 0;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 767px) {
+  .type-caption3 {
+    font-family: var(--font-ibm-plex-mono);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
 }

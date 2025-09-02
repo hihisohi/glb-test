@@ -17,7 +17,7 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffffff);
 
 const camera = new THREE.PerspectiveCamera(
-  22, // 시야각을 75에서 60으로 줄여서 더 넓은 뷰 제공
+  20, // 시야각을 75에서 60으로 줄여서 더 넓은 뷰 제공
   window.innerWidth / window.innerHeight,
   0.1,
   1000
@@ -172,6 +172,9 @@ loader.load(
 
     // 🔧 모델의 y축을 원점보다 살짝 위로 이동
     model.position.y += 0.2;
+    model.position.x -= 0.1;
+
+    model.rotation.y = -Math.PI / 30;
 
     // 🔧 마스크도 (0,0,0)에 맞춰서 위치 조정
     maskMesh.position.sub(maskCenter);
@@ -227,11 +230,11 @@ window.addEventListener("mousemove", (event) => {
 
   // 스크롤 진행률에 따라 카메라 이동 범위를 동적으로 조정
   const baseRangeX = 0.3; // 기본 좌우 이동 범위
-  const baseRangeY = 0.2; // 기본 위아래 이동 범위
+  const baseRangeY = 0.3; // 기본 위아래 이동 범위
 
   // 스크롤 진행률에 따라 범위 증가 (0.3 -> 1.5, 0.2 -> 1.0)
-  const dynamicRangeX = baseRangeX + currentScrollProgress * 0.6;
-  const dynamicRangeY = baseRangeY + currentScrollProgress * 0.4;
+  const dynamicRangeX = baseRangeX + currentScrollProgress * 0.3;
+  const dynamicRangeY = baseRangeY + currentScrollProgress * 0.2;
 
   // 카메라 이동 범위 설정 (동적으로 조정됨)
   targetCameraX = -mouseX * dynamicRangeX;
