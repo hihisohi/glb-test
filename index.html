@@ -4,20 +4,201 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>KPR Clone</title>
 
-    <style>
-      body {
-        margin: 0;
-        overflow: hidden;
-      }
-      canvas {
-        display: block;
-      }
-    </style>
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/src/styles/reset.css" />
+    <link rel="stylesheet" href="/src/styles/common.css" />
+    <link rel="stylesheet" href="/src/styles/frame.css" />
+    <link rel="stylesheet" href="/src/styles/page.css" />
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <!-- canvas 영역 -->
+    <div class="canvas-container"></div>
+
+    <div class="ui-container">
+      <section class="homeHero">
+        <div class="sectionInner">
+          <div class="homeHero__inner">
+            <p class="homeHero__description">
+              <span>
+                KPR is a brand that focuses on collective narrative and
+                empowering storytellers. Keepers is a living story, an uncharted
+                world waiting to be explored, to be imagined.
+              </span>
+              <span>
+                KPR is a brand that focuses on collective narrative and
+                empowering storytellers. Keepers is a living story, an uncharted
+                world waiting to be explored, to be imagined.
+              </span>
+            </p>
+            <div class="homeHero__titleBlock">
+              <h1 class="homeHero__title">
+                <span class="sub">01K</span>
+                Keep
+                <span class="dot">.</span>
+              </h1>
+              <h1 class="homeHero__title">
+                <span class="sub">02P</span>
+                Protect
+                <span class="dot">.</span>
+              </h1>
+              <h1 class="homeHero__title">
+                <span class="sub">03R</span>
+                Reimagine
+                <span class="dot">.</span>
+              </h1>
+            </div>
+            <div class="scrollIndicator type-caption3">
+              <div class="scrollIndicator__text">
+                <span>SCROLL</span>
+                <span>Scroll</span>
+              </div>
+            </div>
+            <div class="scrollIndicator__arrow">
+              <div class="leftLine"></div>
+              <div class="rightLine"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="homeProjectIntro"></section>
+      <section class="homeProjectStory"></section>
+      <section class="homeCollectionIntro"></section>
+      <section class="homeCollectionGallery"></section>
+      <section class="homeKeep"></section>
+      <section class="homeFaction"></section>
+      <section class="homeUniverse"></section>
+      <section class="homeLaunch"></section>
+    </div>
+
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <!-- 프레임 UI -->
+        <div class="frame-container">
+          <div class="theFrame">
+            <div class="frame">
+              <div class="mask maskTopOuter">
+                <div class="mask maskBottomOuter">
+                  <div class="mask maskBottomInner">
+                    <div class="pad">
+                      <div class="content">
+                        <div class="outline"></div>
+                        <div class="top">
+                          <div class="hamburger">
+                            <button class="btnBurger">
+                              <svg
+                                fill="none"
+                                viewBox="0 0 27 6"
+                                class="iconBurger"
+                              >
+                                <path
+                                  d="M.867.711h25.634M.867 5.25h21.429"
+                                ></path>
+                              </svg>
+                            </button>
+                          </div>
+                          <div class="bar">
+                            <div class="frameProgress">
+                              <div class="progressBar"></div>
+                              <div class="line"></div>
+                            </div>
+                            <div class="frameSubmenu">
+                              <div class="submenu">
+                                <button>PROJECT</button>
+                                <button>THE KEEP</button>
+                                <button>FACTION</button>
+                                <button>THE WORLD</button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="widgetLogin">
+                            <button class="loginBtn">SIGN IN</button>
+                          </div>
+                          <div class="line"></div>
+                        </div>
+                        <div class="left">
+                          <div class="logo">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 54 102"
+                              class="iconMark"
+                            >
+                              <path
+                                fill="#fff"
+                                fill-rule="evenodd"
+                                d="M17.958 70.176c0 .873.708 1.581 1.581 1.581h2.799c.873 0 1.58.708 1.58 1.58V100.1c0 .873.709 1.58 1.582 1.58h2.799a1.58 1.58 0 0 0 1.58-1.58V73.338c0-.873.708-1.58 1.581-1.58h2.799a1.58 1.58 0 0 0 1.58-1.582V55.401c0-.873.709-1.581 1.582-1.581h14.83a1.58 1.58 0 0 0 1.58-1.58v-2.8a1.58 1.58 0 0 0-1.58-1.58h-14.83a1.58 1.58 0 0 1-1.581-1.581V31.503a1.58 1.58 0 0 0-1.581-1.58H31.46a1.58 1.58 0 0 1-1.58-1.581V1.58A1.58 1.58 0 0 0 28.298 0h-2.8a1.58 1.58 0 0 0-1.58 1.58v26.761a1.58 1.58 0 0 1-1.581 1.581h-2.799a1.58 1.58 0 0 0-1.58 1.581V46.28a1.58 1.58 0 0 1-1.582 1.58H1.581A1.58 1.58 0 0 0 0 49.44v2.8c0 .872.708 1.58 1.58 1.58h14.797c.873 0 1.581.708 1.581 1.58v14.776Zm7.537-40.286a1.58 1.58 0 0 0-1.58 1.58v14.804a1.58 1.58 0 0 1-1.581 1.581h-2.8a1.58 1.58 0 0 0-1.58 1.581v2.814c0 .873.708 1.58 1.58 1.58h2.8c.873 0 1.58.709 1.58 1.581v14.79c0 .873.708 1.58 1.581 1.58h2.8a1.58 1.58 0 0 0 1.58-1.58V55.397c0-.873.708-1.581 1.581-1.581h2.799a1.58 1.58 0 0 0 1.58-1.581v-2.788a1.58 1.58 0 0 0-1.58-1.58h-2.799a1.58 1.58 0 0 1-1.58-1.581V31.47a1.58 1.58 0 0 0-1.582-1.58h-2.799Z"
+                                clip-rule="evenodd"
+                              ></path>
+                            </svg>
+                          </div>
+                          <div class="bottom">
+                            <button class="btnAudio">
+                              <div class="line"></div>
+                              <div class="line"></div>
+                              <div class="line"></div>
+                              <div class="line"></div>
+                              <div class="line"></div>
+                            </button>
+                          </div>
+                          <div class="line"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="overlays"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 스크롤을 위한 가짜 영역인듯? data-ui로 연결하는 듯함 -->
+        <div class="thePage">
+          <div class="homePage">
+            <div class="heroRef ref" data-ui="heroRef">1</div>
+            <div class="projectIntroRef ref" data-ui="projectIntroRef">2</div>
+            <div class="projectStoryRef ref" data-ui="projectStoryRef"></div>
+            <div class="collectionIntroRef ref" data-ui="collectionIntroRef">
+              3
+            </div>
+            <div
+              class="collectionGalleryRef ref"
+              data-ui="collectionGalleryRef"
+            >
+              4
+            </div>
+            <div class="keepRef ref" data-ui="keepRef">
+              <div id="keep" class="keepScrollTo"></div>
+            </div>
+            5
+            <div class="factionRef ref" data-ui="factionRef">
+              <div id="faction" class="factionScrollTo"></div>
+            </div>
+            6
+            <div class="universeRef ref" data-ui="universeRef">
+              <div id="universe" class="universeScrollTo"></div>
+            </div>
+            7
+            <div class="launchRef ref" data-ui="launchRef"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/scripts/scroll.js"></script>
+    <script type="module" src="/src/scripts/canvas.js"></script>
   </body>
 </html>

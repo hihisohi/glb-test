@@ -1,0 +1,21 @@
+:root {
+  --font-ibm-plex-mono: "IBM Plex Mono", monospace;
+  --font-kanit: "Kanit", sans-serif;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: none;
+}
+
+html,
+body {
+  font-family: var(--font-kanit);
+  font-size: 10px;
+}
+
+.canvas-container {
+  position: fixed;
+  inset: 0;
+}
