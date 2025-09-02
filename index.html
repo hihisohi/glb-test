@@ -22,39 +22,40 @@
     <link rel="stylesheet" href="/src/styles/common.css" />
     <link rel="stylesheet" href="/src/styles/frame.css" />
     <link rel="stylesheet" href="/src/styles/page.css" />
+    <link rel="stylesheet" href="/src/styles/ui.css" />
   </head>
   <body>
     <!-- canvas 영역 -->
     <div class="canvas-container"></div>
 
     <div class="ui-container">
-      <section class="homeHero">
+      <section class="homeHero" data-pin="heroRef">
         <div class="sectionInner">
           <div class="homeHero__inner">
-            <p class="homeHero__description">
+            <p class="homeHero__description type-body1">
               <span>
                 KPR is a brand that focuses on collective narrative and
                 empowering storytellers. Keepers is a living story, an uncharted
                 world waiting to be explored, to be imagined.
               </span>
-              <span>
+              <span style="display: none">
                 KPR is a brand that focuses on collective narrative and
                 empowering storytellers. Keepers is a living story, an uncharted
                 world waiting to be explored, to be imagined.
               </span>
             </p>
             <div class="homeHero__titleBlock">
-              <h1 class="homeHero__title">
+              <h1 class="homeHero__title js-title keep">
                 <span class="sub">01K</span>
                 Keep
                 <span class="dot">.</span>
               </h1>
-              <h1 class="homeHero__title">
+              <h1 class="homeHero__title js-title protect">
                 <span class="sub">02P</span>
                 Protect
                 <span class="dot">.</span>
               </h1>
-              <h1 class="homeHero__title">
+              <h1 class="homeHero__title js-title reimagine">
                 <span class="sub">03R</span>
                 Reimagine
                 <span class="dot">.</span>
@@ -63,24 +64,30 @@
             <div class="scrollIndicator type-caption3">
               <div class="scrollIndicator__text">
                 <span>SCROLL</span>
-                <span>Scroll</span>
+                <span style="display: none">Scroll</span>
               </div>
-            </div>
-            <div class="scrollIndicator__arrow">
-              <div class="leftLine"></div>
-              <div class="rightLine"></div>
+              <div class="scrollIndicator__arrow">
+                <div class="leftLine"></div>
+                <div class="rightLine"></div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="homeProjectIntro"></section>
-      <section class="homeProjectStory"></section>
-      <section class="homeCollectionIntro"></section>
-      <section class="homeCollectionGallery"></section>
-      <section class="homeKeep"></section>
-      <section class="homeFaction"></section>
-      <section class="homeUniverse"></section>
-      <section class="homeLaunch"></section>
+      <section class="homeProjectIntro" data-pin="projectIntroRef"></section>
+      <section class="homeProjectStory" data-pin="projectStoryRef"></section>
+      <section
+        class="homeCollectionIntro"
+        data-ui="collectionIntroRef"
+      ></section>
+      <section
+        class="homeCollectionGallery"
+        data-ui="collectionGalleryRef"
+      ></section>
+      <section class="homeKeep" data-pin="keepRef"></section>
+      <section class="homeFaction" data-pin="factionRef"></section>
+      <section class="homeUniverse" data-pin="universeRef"></section>
+      <section class="homeLaunch" data-pin="launchRef"></section>
     </div>
 
     <div id="smooth-wrapper">
@@ -198,6 +205,7 @@
       </div>
     </div>
 
+    <script type="module" src="/src/scripts/common.js"></script>
     <script type="module" src="/src/scripts/scroll.js"></script>
     <script type="module" src="/src/scripts/canvas.js"></script>
   </body>
