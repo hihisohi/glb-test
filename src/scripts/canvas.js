@@ -15,6 +15,8 @@ import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 // GSAP ScrollTrigger 플러그인 등록
 gsap.registerPlugin(ScrollTrigger);
 
+console.log('dfd')
+
 const canvasContainer = document.querySelector(".canvas-container");
 
 const scene = new THREE.Scene();
