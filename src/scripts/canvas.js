@@ -7,9 +7,15 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { KTX2Loader } from "three/examples/jsm/loaders/KTX2Loader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader";
-
+import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
+import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
+import { BrightnessContrastShader } from "three/examples/jsm/shaders/BrightnessContrastShader.js";
+import { ColorCorrectionShader } from "three/examples/jsm/shaders/ColorCorrectionShader.js";
+import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 // GSAP ScrollTrigger 플러그인 등록
 gsap.registerPlugin(ScrollTrigger);
+
+console.log('dfd')
 
 const canvasContainer = document.querySelector(".canvas-container");
 
@@ -27,6 +33,23 @@ const renderer = new THREE.WebGLRenderer({ antialias: true, stencil: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(window.devicePixelRatio); // 픽셀 비율 최적화
 canvasContainer.appendChild(renderer.domElement);
+
+// EffectComposer 설정
+const composer = new EffectComposer(renderer);
+const renderPass = new RenderPass(scene, camera);
+composer.addPass(renderPass);
+
+// Brightness 조절을 위한 패스 추가
+// const brightnessContrastPass = new ShaderPass(BrightnessContrastShader);
+// brightnessContrastPass.uniforms["brightness"].value = 0.5; // Adjust brightness
+// brightnessContrastPass.uniforms["contrast"].value = 0; // Adjust contrast
+// composer.addPass(brightnessContrastPass);
+
+// 색상보정
+// const colorCorrectionPass = new ShaderPass(ColorCorrectionShader);
+// colorCorrectionPass.uniforms.powRGB.value = new THREE.Vector3(1.1, 1.0, 0.9); // RGB 각각 조절
+// colorCorrectionPass.uniforms.mulRGB.value = new THREE.Vector3(1.0, 1.1, 1.0);
+// composer.addPass(colorCorrectionPass);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
@@ -77,7 +100,7 @@ controls.maxAzimuthAngle = Math.PI / 36;
 controls.enableDamping = true;
 controls.dampingFactor = 0.1;
 
-scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+scene.add(new THREE.AmbientLight(0xffffff, -1.4));
 const light = new THREE.DirectionalLight(0xffffff, 1);
 light.position.set(2, 2, 2);
 scene.add(light);
@@ -330,6 +353,7 @@ function animate() {
   // 카메라가 항상 (0, 0, 0)을 바라보도록 설정
   camera.lookAt(0, 0, 0);
 
-  renderer.render(scene, camera);
+  // renderer.render(scene, camera); // 이 줄을 아래로 변경
+  composer.render();
 }
 animate();
