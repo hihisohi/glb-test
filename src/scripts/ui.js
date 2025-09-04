@@ -62,8 +62,11 @@ document.addEventListener("DOMContentLoaded", () => {
           projectIntroDescription.style.opacity = (progress - 0.5) / 0.3;
         }
 
-        if (progress < 0.5) {
-          projectIntroMedia.style.opacity = Math.min(progress * 2, 1);
+        if (progress > 0.5) {
+          // projectIntroMedia.style.opacity = Math.min(progress * 2, 1);
+          projectIntroMedia.style.opacity = (progress - 0.5) / 0.2;
+        } else {
+          projectIntroMedia.style.opacity = 0;
         }
         projectIntroMedia.style.transform = `translate3d(${-100 + progress * 100}%, 0, ${-500 + progress * 500}px) rotateY(${50 - progress * 50}deg) scaleX(${0.8 + progress * 0.2})`;
 
