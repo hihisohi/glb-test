@@ -1,7 +1,6 @@
 import * as THREE from "three";
 import { GUI } from "dat.gui";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { KTX2Loader } from "three/examples/jsm/loaders/KTX2Loader";
@@ -12,8 +11,6 @@ import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { BrightnessContrastShader } from "three/examples/jsm/shaders/BrightnessContrastShader.js";
 import { ColorCorrectionShader } from "three/examples/jsm/shaders/ColorCorrectionShader.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
-// GSAP ScrollTrigger 플러그인 등록
-gsap.registerPlugin(ScrollTrigger);
 
 console.log('dfd')
 
@@ -100,18 +97,19 @@ controls.maxAzimuthAngle = Math.PI / 36;
 controls.enableDamping = true;
 controls.dampingFactor = 0.1;
 
-scene.add(new THREE.AmbientLight(0xffffff, -1.4));
+const ambientLight = new THREE.AmbientLight(0xffffff, -1.2);
+scene.add(ambientLight);
+
 const light = new THREE.DirectionalLight(0xffffff, 1);
 light.position.set(2, 2, 2);
 scene.add(light);
 
 // 축 가시화
-const axesHelper = new THREE.AxesHelper(2);
-scene.add(axesHelper);
+// const axesHelper = new THREE.AxesHelper(2);
+// scene.add(axesHelper);
 
 //
-// ✅ 1. 마스크용 Shape (곡선 형태)
-// 여기서는 예시로 둥근 사각형
+// ✅ 1. 마스크용 Shape
 //
 const svgPathData =
   "M444 1H51C39.9543 1 31 9.95428 31 21V236.632C31 243.778 27.188 250.38 21 253.953L11 259.727C4.81198 263.299 1 269.902 1 277.047V454.5C1 465.546 9.95432 474.5 21 474.5H403.716C409.02 474.5 414.107 472.393 417.858 468.642L458.142 428.358C461.893 424.607 464 419.52 464 414.216V21C464 9.95431 455.046 1 444 1Z";
@@ -139,6 +137,7 @@ const maskMaterial = new THREE.MeshBasicMaterial({
 const maskMesh = new THREE.Mesh(maskGeometry, maskMaterial);
 // maskMesh.position.z = 0.5;
 maskMesh.scale.set(0.007, -0.007, 1); // 보통 SVG는 좌표가 큼
+
 
 // 🔧 마스크의 회전 중심점을 (0,0,0)으로 설정
 // geometry의 중심점을 계산하고 조정
@@ -195,14 +194,15 @@ loader.load(
 
     // 🔧 모델의 y축을 원점보다 살짝 위로 이동
     model.position.y += 0.2;
-    model.position.x -= 0.1;
+    model.position.x += 0;
 
     model.rotation.y = -Math.PI / 30;
 
     // 🔧 마스크도 (0,0,0)에 맞춰서 위치 조정
     maskMesh.position.sub(maskCenter);
 
-    maskMesh.position.y += 0.1;
+    maskMesh.position.y -= 0.1;
+    maskMesh.position.x += 0.1;
 
     // ✅ 카메라를 (0,0,0)을 바라보도록 설정
     camera.position.set(0, 0, initialCameraZ);
@@ -308,6 +308,9 @@ function setupScrollAnimation() {
               maskScale
             );
 
+            const targetY = -0.1 - (progress * 0.6); // -0.1에서 -0.7까지 변화
+            currentMaskMesh.position.y = targetY;
+
             // 스케일 변경 후 새로운 중심점 계산
             const newMaskBox = new THREE.Box3().setFromObject(currentMaskMesh);
             const newMaskCenter = new THREE.Vector3();
@@ -317,10 +320,28 @@ function setupScrollAnimation() {
             const centerOffset = new THREE.Vector3();
             centerOffset.subVectors(originalMaskCenter, newMaskCenter);
             currentMaskMesh.position.add(centerOffset);
+
+            // 중심점 조정 후 y 위치 재설정 (중요!)
+            currentMaskMesh.position.y = targetY;
+
+            // 카메라가 항상 (0, 0, 0)을 바라보도록 설정
+            camera.lookAt(0, 0, 0);
+
           }
 
-          // 카메라가 항상 (0, 0, 0)을 바라보도록 설정
-          camera.lookAt(0, 0, 0);
+          if (currentModel) {
+            const targetModelY = -0.1 - (progress * 0.8); // -0.1에서 -0.7까지 변화
+            currentModel.position.y = targetModelY;
+          }
+
+          // AmbientLight 밝기: 0.1 -> 1.2로 증가
+          if (progress < 0.5) {
+            ambientLight.intensity = THREE.MathUtils.lerp(-1.2, 6.0, progress * 2);
+          }
+          else {
+            const normalizedProgress = (progress - 0.5) * 2; // 0 → 1
+            ambientLight.intensity = THREE.MathUtils.lerp(6.0, -1.2, normalizedProgress);
+          }
         },
       },
     }

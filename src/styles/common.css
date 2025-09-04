@@ -2,6 +2,11 @@
   --font-ibm-plex-mono: "IBM Plex Mono", monospace;
   --font-kanit: "Kanit", sans-serif;
   --font-commissioner: "Commissioner", sans-serif;
+  --font-abc-whyte-inktrap: "ABCWhyteInktrap", sans-serif;
+
+  --line-light: hsla(0, 0%, 100%, .2);
+  --line-dark: rgba(0, 0, 0, .1);
+  --line-thickness: 1px;
 
   --menu-width: 67px;
   --menu-height: 51px;
@@ -25,39 +30,20 @@
   --z-footer: 200;
 }
 
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: none;
-  font-size: 10px;
-}
-
-@media only screen and (max-width: 767px) {
-  html {
-    font-size: clamp(8.5333333333px, 2.6666666667vw, 27.28px);
-    min-height: 0;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  html {
-    font-size: clamp(6.4px, 0.625vw, 12px);
-    min-height: 0;
-  }
-}
-
-html.remlock {
-  font-size: 10px !important;
-}
-
 html,
 body {
-  font-family: var(--font-kanit);
+  font-family: ABCWhytePlus;
 }
 
 .canvas-container {
   position: fixed;
   inset: 0;
+
+  pointer-events: none;
+}
+
+#smooth-wrapper {
+  pointer-events: none;
 }
 
 .ui-container {
@@ -119,4 +105,53 @@ body {
     letter-spacing: -0.02em;
     line-height: 1.1;
   }
+}
+
+.caption {
+  align-items: flex-start;
+  display: flex;
+  left: 2rem;
+  position: absolute;
+  top: 2rem
+}
+
+.caption__dot {
+  background-color: currentColor;
+  height: 4px;
+  margin-right: .7rem;
+  margin-top: .15rem;
+  width: 4px
+}
+
+@media only screen and (min-width: 1600px) {
+  .caption__dot {
+    height: 5px;
+    width: 5px
+  }
+}
+
+.caption__text {
+  white-space: pre-line
+}
+
+.title1 {
+  position: relative
+}
+
+.title1__caption {
+  left: 0;
+  position: absolute;
+  top: .2rem;
+  width: 8rem
+}
+
+.title1__caption .caption {
+  left: 0;
+  position: relative;
+  top: 0;
+  will-change: transform
+}
+
+.title1__text .line {
+  will-change: transform, opacity
 }
