@@ -21,6 +21,9 @@
   <link rel="stylesheet" href="/src/styles/copy/home.css" />
   <link rel="stylesheet" href="/src/styles/copy/custom-materal.css" />
   <link rel="stylesheet" href="/src/styles/copy/entry.css" />
+  <link rel="stylesheet" href="/src/styles/copy/the-footer.css" />
+  <link rel="stylesheet" href="/src/styles/copy/hacky-text.css" />
+  <link rel="stylesheet" href="/src/styles/copy/content-home.css" />
   <link rel="stylesheet" href="/src/styles/common.css" />
   <link rel="stylesheet" href="/src/styles/frame.css" />
   <link rel="stylesheet" href="/src/styles/page.css" />
@@ -30,6 +33,72 @@
 <body>
   <!-- canvas 영역 -->
   <div class="canvas-container"></div>
+
+  <div class="homeProjectStory-bg parallax-wrapper">
+    <div class="parallax-bg"></div>
+  </div>
+
+  <div class="homeCollectionIntro-bg">
+    <div class="homeCollectionIntro-bg__innerWrap">
+      <div class="homeCollectionIntro-bg__inner"></div>
+    </div>
+    <div class="rect">
+      <div class="rect-item"></div>
+      <div class="rect-item"></div>
+      <div class="rect-item"></div>
+    </div>
+  </div>
+
+  <div class="fixed-footer-container">
+    <section class="homeLaunch homeLaunch--buy homeSection"
+      style="opacity: 1; pointer-events: none; visibility: hidden;">
+      <div class="homeLaunch__inner sectionInner">
+        <div class="homeLaunch__overflow">
+          <div data-ui="grid" class="homeLaunch__grid">
+            <!--?lit$91282152$-->
+            <div class="homeLaunch__gridItem" data-ui="tl">
+              <div class="homeLaunch__title">
+                <h1 class="js-bigText  title">KEEPERS</h1>
+              </div>
+              <!--?lit$91282152$-->
+              <hr class="js-line  line--bottom homeLaunch__line dark">
+            </div>
+            <div class="homeLaunch__gridItem" data-ui="bl">
+              <!--?lit$91282152$-->
+              <div class="caption type-caption2 type-caption2">
+                <div data-ui="dot" class="caption__dot"></div>
+                <p data-ui="text" class="caption__text">
+                <div>B</div>
+                <div>e</div>
+                <div>c</div>
+                <div>o</div>
+                <div>m</div>
+                <div>e</div>
+                <div>a</div>
+                <div>K</div>
+                <div>e</div>
+                <div>e</div>
+                <div>p</div>
+                <div>e</div>
+                <div>r</div>
+                </p>
+              </div>
+              <div class="homeLaunch__launchBtn" data-ui="launch-btn">
+                <p data-ui="body" class="type-body1"><span
+                    style="top: 0px; left: 0px; max-width: 100%; position: absolute;">What path will you forge as you
+                    become the Keeper of your destiny?</span><span style="opacity: 0;">
+                    <!--?lit$91282152$-->What path will you forge as you become the Keeper of your destiny?
+                  </span></p>
+                <div class="homeLaunch__btnWrapper" data-ui="btnWrapper"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
 
   <div class="ui-container">
     <section class="homeLanding lightTheme" data-ref="landingRef">
@@ -148,7 +217,7 @@
           </div>
         </div>
         <div class="block--right block">
-          <div data-ui="media" class="homeProjectIntro__media"><button class="btnPlay" style="opacity: 1;">
+          <div data-ui="media" class="homeProjectIntro__media"><button class="btnPlay">
               <svg class="btnPlay__icon" data-ui="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61.2 61.2"
                 overflow="visible">
                 <circle cx="30.6" cy="30.6" r="30.11" fill="none" stroke="currentColor" stroke-width="0.99"
@@ -182,13 +251,349 @@
         </div>
       </div>
     </section>
-    <section class="homeProjectStory lightTheme" data-ref="projectStoryRef"></section>
-    <section class="homeCollectionIntro darkTheme" data-ref="collectionIntroRef"></section>
-    <section class="homeCollectionGallery darkTheme" data-ref="collectionGalleryRef"></section>
-    <section class="homeKeep" data-ref="keepRef"></section>
-    <section class="homeFaction" data-ref="factionRef"></section>
-    <section class="homeUniverse" data-ref="universeRef"></section>
-    <section class="homeLaunch" data-ref="launchRef"></section>
+    <section class="homeProjectStory lightTheme" data-ref="projectStoryRef">
+      <div class="sectionInner">
+        <div class="row1 row">
+          <hr class="js-line line--top dark">
+          <div class="rowBlock">
+            <hr class="js-line line--right dark">
+            <div data-ui="title1" class="title1">
+              <div class="title1 ">
+                <div data-ui="caption" class="title1__caption">
+                  <div class="caption type-caption2 type-caption2">
+                    <div data-ui="dot" class="caption__dot"></div>
+                    <p data-ui="text" class="caption__text">
+                    <div>0</div>
+                    <div>0</div>
+                    <div>2</div>
+                    </p>
+                  </div>
+                </div>
+                <h2 data-ui="title" class="title1__text type-h1">
+                  <div class="line" data-ani>
+                    <span class="spacer"> </span>You are a Keeper: an agent
+                  </div>
+                  <div class="line" data-ani>
+                    of power and change in this </div>
+                  <div class="line" data-ani>
+                    world.</div>
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="rowBlock small  d-only">
+            <div data-ui="terminalInfo" class="terminalInfo  textHacky">
+              <span><br>//INITIALIZING<br>KEEPER
+                STORY<br><br>LOADING...[47%]<br><br>LOCATION_DATA<br>CHARACTER_ATTRIBUTES<br>KLMX
+                TRANSMISSIONS<br></span><span>
+                //Initializing
+                <!-- Keeper Story
+
+                Loading...[47%]
+
+                Location_Data
+                Character_Attributes
+                KLMx Transmissions -->
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="row2 row">
+          <hr class="js-line  line--top  dark">
+          <div class="rowBlock">
+            <hr class="js-line  line--right  dark">
+          </div>
+          <div data-ui="videoWrap" class="rowBlock small">
+            <div data-ui="coords" class="coords  textHacky" style="contain: content;">
+              <span><br>N 35°27.37<br>E
+                139°38.57<br></span>
+              <!-- <span>
+                N 35°27.37
+                E 139°38.57
+              </span> -->
+            </div>
+            <img src="/svg/degrees.svg" alt="" class="degrees">
+            <video playsinline="" loop="">
+              <source src="/videos/project/topo-landing.mp4" type="video/mp4; codecs=&quot;hvc1&quot;">
+              <source src="/videos/project/topo-landing.webm" type="video/webm">
+            </video>
+          </div>
+        </div>
+        <div class="row3 row">
+          <hr class="js-line line--top dark">
+          <div data-ui="diagLineBlock" class="rowBlock small d-only">
+            <hr class="js-line line--right dark">
+            <hr class="js-line line--diagonal dark">
+          </div>
+          <div class="rowBlock">
+            <div data-ui="title2" class="title2">
+              <div class="title1 ">
+                <div data-ui="caption" class="title1__caption">
+                  <div class="caption type-caption2 type-caption2">
+                    <div data-ui="dot" class="caption__dot"></div>
+                    <p data-ui="text" class="caption__text">
+                    <div>0</div>
+                    <div>0</div>
+                    <div>3</div>
+                    </p>
+                  </div>
+                </div>
+                <h2 data-ui="title" class="title1__text type-h1">
+                  <div class="line" data-ani>
+                    <span class="spacer"> </span>What will you do with this
+                  </div>
+                  <div class="line" data-ani>
+                    power? Will you choose to </div>
+                  <div class="line" data-ani>
+                    protect or destroy? To give </div>
+                  <div class="line" data-ani>
+                    or to take?</div>
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row4 row">
+          <hr class="js-line  line--top  dark">
+          <div class="rowBlock small  d-only">
+            <hr class="js-line  line--right  dark">
+          </div>
+          <div data-ui="logoBoundingBox" class="rowBlock">
+            <hr class="js-line  line--right  dark">
+            <hr class="js-line  line--top m-only dark">
+            <div class="caption type-caption2 type-caption2">
+              <div data-ui="dot" class="caption__dot"></div>
+              <p data-ui="text" class="caption__text">
+              <div>K</div>
+              <div>e</div>
+              <div>e</div>
+              <div>p</div>
+              <div>e</div>
+              <div>r</div>
+              <div>s</div> <br>
+              <div>S</div>
+              <div>y</div>
+              <div>m</div>
+              <div>b</div>
+              <div>o</div>
+              <div>l</div>
+              </p>
+            </div>
+          </div>
+          <div data-ui="lastRowBlock" class="rowBlock small  d-only">
+            <!-- <p class="body">
+              Our all-star team is not new in this world, we know our trade and
+              we're are here to be transparent. A group of storytellers and
+              artists with past experiences at XXXX have teamed up to deliver a
+              new horizon in the Metaverse.
+            </p> -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="homeCollectionIntro darkTheme" data-ref="collectionIntroRef">
+      <div data-ui="inner" class="homeCollectionIntro__inner sectionInner fill">
+        <div data-ui="blocks" class="blocks">
+          <div data-ui="left" class="block--left">
+            <div class="collectionIntroCount">
+              <h2 data-ui="countText" class="collectionIntroCount__count">
+                <span data-ui="count">00</span>
+                <span>k</span>
+              </h2>
+              <footer class="collectionIntroCount__countFooter  type-caption2">
+                <div class="left">
+                  <img class="arrows" src="/svg/double-arrow-right.svg" alt="">
+                  <p>Initial Collection</p>
+                </div>
+                <div class="right">
+                  <!-- <p>
+            lit$339707547$
+            <span class="date">lit$339707547$</span>
+          </p> -->
+                </div>
+              </footer>
+            </div>
+          </div>
+          <div class="block--middle  block">
+            <div data-ui="heroWrap" class="homeCollectionIntro__heroWrap">
+              <div data-ui="hero" class="homeCollectionIntro__hero"></div>
+            </div>
+            <hr class="js-line  line--right  dark">
+          </div>
+          <div data-ui="right" class="block--right d-only">
+            <div data-ui="topRight" class="block--rightTop  block">
+              <div data-ui="crystalVideo" class="homeCollectionIntro__mediaWrap">
+                <img class="homeCollectionIntro__videoBg" src="/assets/images/measurement-lines.svg" alt="">
+                <video autoplay playsinline muted class="transparentVideo " poster="" loop>
+                  <source type="video/mp4; codecs=&quot;hvc1&quot;"
+                    src="/assets/videos/OBJECT-FX_001_CLEAN_1-hevc-safari.mp4">
+                  <source type="video/webm" src="/assets/videos/OBJECT-FX_001_CLEAN_1-vp9-chrome.webm">
+                </video>
+              </div>
+              <!--?lit$339707547$-->
+              <hr class="js-line  line--bottom  dark">
+              <div class="caption type-caption2 type-caption2">
+                <div data-ui="dot" class="caption__dot"></div>
+                <p data-ui="text" class="caption__text">
+                <div>K</div>
+                <div>a</div>
+                <div>i</div>
+                <div>C</div>
+                <div>r</div>
+                <div>y</div>
+                <div>s</div>
+                <div>t</div>
+                <div>a</div>
+                <div>l</div>
+                </p>
+              </div>
+            </div>
+            <div data-ui="bottomRight" class="block--rightBottom  block">
+              <div data-ui="mediaWrap" class="homeCollectionIntro__mediaWrap">
+                <div class="mediaInner">
+                  <img alt="image" class="mediaEl" src="/assets/images/face-traits.webp">
+                </div>
+              </div>
+              <div class="caption type-caption2 type-caption2">
+                <div data-ui="dot" class="caption__dot"></div>
+                <p data-ui="text" class="caption__text">
+                <div>W</div>
+                <div>i</div>
+                <div>n</div>
+                <div>d</div>
+                <div>o</div>
+                <div>w</div>
+                <div>s</div>
+                <div>t</div>
+                <div>o</div>
+                <div>t</div>
+                <div>h</div>
+                <div>e</div>
+                <div>S</div>
+                <div>o</div>
+                <div>u</div>
+                <div>l</div>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="homeCollectionGallery darkTheme" data-ref="collectionGalleryRef">
+      <div data-ui="inner" class="homeCollectionGallery__inner sectionInner fill">
+        <div data-ui="topLeft" class="block--topleft block">
+          <hr class="js-line line--bottom dark">
+          <hr class="js-line line--top m-only dark">
+          <div class="title1 ">
+            <div data-ui="caption" class="title1__caption">
+              <div class="caption type-caption2 type-caption2">
+                <div data-ui="dot" class="caption__dot"></div>
+                <p data-ui="text" class="caption__text">
+                <div>0</div>
+                <div>0</div>
+                <div>4</div>
+                </p>
+              </div>
+            </div>
+            <h2 data-ui="title" class="title1__text type-h1">
+              <div class="line"><span class="spacer">
+                </span>10,000 unique digital </div>
+              <div class="line">collectibles. </div>
+            </h2>
+          </div>
+        </div>
+        <div data-ui="topRight" class="block--topright block">
+          <hr class="js-line line--top m-only dark">
+          <hr class="js-line line--bottom dark">
+          <div class="caption type-caption2 type-caption2">
+            <div data-ui="dot" class="caption__dot"></div>
+            <p data-ui="text" class="caption__text">
+            <div>I</div>
+            <div>n</div>
+            <div>i</div>
+            <div>t</div>
+            <div>i</div>
+            <div>a</div>
+            <div>l</div>
+            <div>C</div>
+            <div>o</div>
+            <div>l</div>
+            <div>l</div>
+            <div>e</div>
+            <div>c</div>
+            <div>t</div>
+            <div>i</div>
+            <div>o</div>
+            <div>n</div>
+            </p>
+          </div>
+          <p data-ui="body" class="homeCollectionGallery__body type-body1">
+            Every Keeper is born, endowed with attributes from a collection of over 400
+            meticulously hand-painted assets. They are personable, iconic possessions that represent KPR's foundational
+            pillars of evolution, inclusion, and imagination.
+          </p>
+        </div>
+        <div data-ui="bottom" class="block--bottom">
+          <hr class="js-line  lineBase homeCollectionGallery__lineMiddle">
+          <div class="collectionGallery">
+            <img data-ui="arrowUp" class="collectionGallery__arrowUp" src="/assets/images/arrow-down.svg" alt="">
+            <img data-ui="arrowDown" class="collectionGallery__arrowDown" src="/assets/images/arrow-down.svg" alt="">
+            <div data-ui="left" class="collectionGallery__left">
+              <div data-ui="leftInner" class="collectionGallery__inner">
+                <div class="collectionGallery__item" style="background-image: url('/assets/images/card-left-01.webp')">
+                </div>
+                <div class="collectionGallery__item" style="background-image: url('/assets/images/card-left-02.webp')">
+                </div>
+                <div class="collectionGallery__item" style="background-image: url('/assets/images/card-left-03.webp')">
+                </div>
+                <div class="collectionGallery__item" style="background-image: url('/assets/images/card-left-04.webp')">
+                </div>
+                <div class="collectionGallery__item" style="background-image: url('/assets/images/card-left-05.webp')">
+                </div>
+                <div class="collectionGallery__item" style="background-image: url('/assets/images/card-left-06.webp')">
+                </div>
+              </div>
+            </div>
+            <div data-ui="right" class="collectionGallery__right" style="z-index: 0;">
+              <div data-ui="rightInner" class="collectionGallery__inner">
+                <div class="collectionGallery__item"
+                  style="background-image: url('/assets/images/card-right-01.webp');">
+                </div>
+                <div class="collectionGallery__item"
+                  style="background-image: url('/assets/images/card-right-02.webp');">
+                </div>
+                <div class="collectionGallery__item"
+                  style="background-image: url('/assets/images/card-right-03.webp');">
+                </div>
+                <div class="collectionGallery__item" style="background-image: url('/assets/images/card-right-04.webp')">
+                </div>
+                <div class="collectionGallery__item"
+                  style="background-image: url('/assets/images/card-right-05.webp');">
+                </div>
+                <div class=" collectionGallery__item"
+                  style="background-image: url('/assets/images/card-right-06.webp');">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <section class=" homeKeep" data-ref="keepRef"></section> -->
+    <!-- <section class="homeFaction" data-ref="factionRef"></section> -->
+    <!-- <section class="homeUniverse" data-ref="universeRef"></section> -->
+    <div class="launchCards homeLaunch" visible="" data-ref="launchRef">
+      <div class="singleCard singleCard--universe"
+        style="width: 400.617px; transform: translate3d(-264.407px, -235.645px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg); height: 371.683px; visibility: visible; opacity: 1; position: absolute; top: 50%; left: 50%;"
+        active=""></div>
+      <div class="singleCard singleCard--factions"
+        style="width: 400.617px; transform: translate3d(-222.743px, 119.035px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg); height: 224.791px; visibility: visible; opacity: 1; position: absolute; top: 50%; left: 50%;"
+        active=""></div>
+      <div class="singleCard singleCard--keep"
+        style="width: 201.453px; transform: translate3d(137.24px, -187.615px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg); height: 400.617px; visibility: visible; opacity: 1; position: absolute; top: 50%; left: 50%;"
+        active=""></div>
+    </div>
   </div>
 
   <div id="smooth-wrapper">
@@ -196,126 +601,129 @@
       <!-- 프레임 UI -->
       <div class="frame-container">
         <div class="theFrame">
-          <div class="frame-layer theme-light">
-            <div class="mask maskTopOuter">
-              <div class="mask maskBottomOuter">
-                <div class="mask maskBottomInner">
-                  <div class="pad">
-                    <div class="content">
-                      <div class="line-outer"></div>
-                      <div class="top">
-                        <div class="hamburger">
-                          <button class="btnBurger">
-                            <svg fill="none" viewBox="0 0 27 6" class="iconBurger">
-                              <path d="M.867.711h25.634M.867 5.25h21.429"></path>
-                            </svg>
-                          </button>
-                        </div>
-                        <div class="bar">
-                          <div class="frameProgress">
-                            <div class="progressBar"></div>
-                            <div class="right-line"></div>
+          <div class="full">
+            <div class="frame-layer full theme-light">
+              <div class="mask maskTopOuter">
+                <div class="mask maskBottomOuter">
+                  <div class="mask maskBottomInner">
+                    <div class="pad">
+                      <div class="content">
+                        <div class="line-outer"></div>
+                        <div class="top">
+                          <div class="hamburger">
+                            <button class="btnBurger">
+                              <svg fill="none" viewBox="0 0 27 6" class="iconBurger">
+                                <path d="M.867.711h25.634M.867 5.25h21.429"></path>
+                              </svg>
+                            </button>
                           </div>
-                          <div class="frameSubmenu">
-                            <div class="submenu">
-                              <button>PROJECT</button>
-                              <button>THE KEEP</button>
-                              <button>FACTION</button>
-                              <button>THE WORLD</button>
+                          <div class="bar">
+                            <div class="frameProgress">
+                              <div class="progressBar"></div>
+                              <div class="right-line"></div>
+                            </div>
+                            <div class="frameSubmenu">
+                              <div class="submenu">
+                                <button>PROJECT</button>
+                                <button>THE KEEP</button>
+                                <button>FACTION</button>
+                                <button>THE WORLD</button>
+                              </div>
                             </div>
                           </div>
+                          <div class="widgetLogin">
+                            <button class="loginBtn">SIGN IN</button>
+                          </div>
+                          <div class="line"></div>
                         </div>
-                        <div class="widgetLogin">
-                          <button class="loginBtn">SIGN IN</button>
+                        <div class="left">
+                          <div class="logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 102" class="iconMark">
+                              <path fill-rule="evenodd"
+                                d="M17.958 70.176c0 .873.708 1.581 1.581 1.581h2.799c.873 0 1.58.708 1.58 1.58V100.1c0 .873.709 1.58 1.582 1.58h2.799a1.58 1.58 0 0 0 1.58-1.58V73.338c0-.873.708-1.58 1.581-1.58h2.799a1.58 1.58 0 0 0 1.58-1.582V55.401c0-.873.709-1.581 1.582-1.581h14.83a1.58 1.58 0 0 0 1.58-1.58v-2.8a1.58 1.58 0 0 0-1.58-1.58h-14.83a1.58 1.58 0 0 1-1.581-1.581V31.503a1.58 1.58 0 0 0-1.581-1.58H31.46a1.58 1.58 0 0 1-1.58-1.581V1.58A1.58 1.58 0 0 0 28.298 0h-2.8a1.58 1.58 0 0 0-1.58 1.58v26.761a1.58 1.58 0 0 1-1.581 1.581h-2.799a1.58 1.58 0 0 0-1.58 1.581V46.28a1.58 1.58 0 0 1-1.582 1.58H1.581A1.58 1.58 0 0 0 0 49.44v2.8c0 .872.708 1.58 1.58 1.58h14.797c.873 0 1.581.708 1.581 1.58v14.776Zm7.537-40.286a1.58 1.58 0 0 0-1.58 1.58v14.804a1.58 1.58 0 0 1-1.581 1.581h-2.8a1.58 1.58 0 0 0-1.58 1.581v2.814c0 .873.708 1.58 1.58 1.58h2.8c.873 0 1.58.709 1.58 1.581v14.79c0 .873.708 1.58 1.581 1.58h2.8a1.58 1.58 0 0 0 1.58-1.58V55.397c0-.873.708-1.581 1.581-1.581h2.799a1.58 1.58 0 0 0 1.58-1.581v-2.788a1.58 1.58 0 0 0-1.58-1.58h-2.799a1.58 1.58 0 0 1-1.58-1.581V31.47a1.58 1.58 0 0 0-1.582-1.58h-2.799Z"
+                                clip-rule="evenodd"></path>
+                            </svg>
+                          </div>
+                          <div class="bottom">
+                            <button class="btnAudio">
+                              <div class="line"></div>
+                              <div class="line"></div>
+                              <div class="line"></div>
+                              <div class="line"></div>
+                              <div class="line"></div>
+                            </button>
+                          </div>
+                          <div class="line"></div>
                         </div>
-                        <div class="line"></div>
-                      </div>
-                      <div class="left">
-                        <div class="logo">
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 102" class="iconMark">
-                            <path fill-rule="evenodd"
-                              d="M17.958 70.176c0 .873.708 1.581 1.581 1.581h2.799c.873 0 1.58.708 1.58 1.58V100.1c0 .873.709 1.58 1.582 1.58h2.799a1.58 1.58 0 0 0 1.58-1.58V73.338c0-.873.708-1.58 1.581-1.58h2.799a1.58 1.58 0 0 0 1.58-1.582V55.401c0-.873.709-1.581 1.582-1.581h14.83a1.58 1.58 0 0 0 1.58-1.58v-2.8a1.58 1.58 0 0 0-1.58-1.58h-14.83a1.58 1.58 0 0 1-1.581-1.581V31.503a1.58 1.58 0 0 0-1.581-1.58H31.46a1.58 1.58 0 0 1-1.58-1.581V1.58A1.58 1.58 0 0 0 28.298 0h-2.8a1.58 1.58 0 0 0-1.58 1.58v26.761a1.58 1.58 0 0 1-1.581 1.581h-2.799a1.58 1.58 0 0 0-1.58 1.581V46.28a1.58 1.58 0 0 1-1.582 1.58H1.581A1.58 1.58 0 0 0 0 49.44v2.8c0 .872.708 1.58 1.58 1.58h14.797c.873 0 1.581.708 1.581 1.58v14.776Zm7.537-40.286a1.58 1.58 0 0 0-1.58 1.58v14.804a1.58 1.58 0 0 1-1.581 1.581h-2.8a1.58 1.58 0 0 0-1.58 1.581v2.814c0 .873.708 1.58 1.58 1.58h2.8c.873 0 1.58.709 1.58 1.581v14.79c0 .873.708 1.58 1.581 1.58h2.8a1.58 1.58 0 0 0 1.58-1.58V55.397c0-.873.708-1.581 1.581-1.581h2.799a1.58 1.58 0 0 0 1.58-1.581v-2.788a1.58 1.58 0 0 0-1.58-1.58h-2.799a1.58 1.58 0 0 1-1.58-1.581V31.47a1.58 1.58 0 0 0-1.582-1.58h-2.799Z"
-                              clip-rule="evenodd"></path>
-                          </svg>
-                        </div>
-                        <div class="bottom">
-                          <button class="btnAudio">
-                            <div class="line"></div>
-                            <div class="line"></div>
-                            <div class="line"></div>
-                            <div class="line"></div>
-                            <div class="line"></div>
-                          </button>
-                        </div>
-                        <div class="line"></div>
                       </div>
                     </div>
+                    <div class="overlays"></div>
                   </div>
-                  <div class="overlays"></div>
+                </div>
+              </div>
+            </div>
+            <div class="frame-layer full theme-dark">
+              <div class="mask maskTopOuter">
+                <div class="mask maskBottomOuter">
+                  <div class="mask maskBottomInner">
+                    <div class="pad">
+                      <div class="content">
+                        <div class="line-outer"></div>
+                        <div class="top">
+                          <div class="hamburger">
+                            <button class="btnBurger">
+                              <svg fill="none" viewBox="0 0 27 6" class="iconBurger">
+                                <path d="M.867.711h25.634M.867 5.25h21.429"></path>
+                              </svg>
+                            </button>
+                          </div>
+                          <div class="bar">
+                            <div class="frameProgress">
+                              <div class="progressBar"></div>
+                              <div class="right-line"></div>
+                            </div>
+                            <div class="frameSubmenu">
+                              <div class="submenu">
+                                <button>PROJECT</button>
+                                <button>THE KEEP</button>
+                                <button>FACTION</button>
+                                <button>THE WORLD</button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="widgetLogin">
+                            <button class="loginBtn">SIGN IN</button>
+                          </div>
+                          <div class="line"></div>
+                        </div>
+                        <div class="left">
+                          <div class="logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 102" class="iconMark">
+                              <path fill-rule="evenodd"
+                                d="M17.958 70.176c0 .873.708 1.581 1.581 1.581h2.799c.873 0 1.58.708 1.58 1.58V100.1c0 .873.709 1.58 1.582 1.58h2.799a1.58 1.58 0 0 0 1.58-1.58V73.338c0-.873.708-1.58 1.581-1.58h2.799a1.58 1.58 0 0 0 1.58-1.582V55.401c0-.873.709-1.581 1.582-1.581h14.83a1.58 1.58 0 0 0 1.58-1.58v-2.8a1.58 1.58 0 0 0-1.58-1.58h-14.83a1.58 1.58 0 0 1-1.581-1.581V31.503a1.58 1.58 0 0 0-1.581-1.58H31.46a1.58 1.58 0 0 1-1.58-1.581V1.58A1.58 1.58 0 0 0 28.298 0h-2.8a1.58 1.58 0 0 0-1.58 1.58v26.761a1.58 1.58 0 0 1-1.581 1.581h-2.799a1.58 1.58 0 0 0-1.58 1.581V46.28a1.58 1.58 0 0 1-1.582 1.58H1.581A1.58 1.58 0 0 0 0 49.44v2.8c0 .872.708 1.58 1.58 1.58h14.797c.873 0 1.581.708 1.581 1.58v14.776Zm7.537-40.286a1.58 1.58 0 0 0-1.58 1.58v14.804a1.58 1.58 0 0 1-1.581 1.581h-2.8a1.58 1.58 0 0 0-1.58 1.581v2.814c0 .873.708 1.58 1.58 1.58h2.8c.873 0 1.58.709 1.58 1.581v14.79c0 .873.708 1.58 1.581 1.58h2.8a1.58 1.58 0 0 0 1.58-1.58V55.397c0-.873.708-1.581 1.581-1.581h2.799a1.58 1.58 0 0 0 1.58-1.581v-2.788a1.58 1.58 0 0 0-1.58-1.58h-2.799a1.58 1.58 0 0 1-1.58-1.581V31.47a1.58 1.58 0 0 0-1.582-1.58h-2.799Z"
+                                clip-rule="evenodd"></path>
+                            </svg>
+                          </div>
+                          <div class="bottom">
+                            <button class="btnAudio">
+                              <div class="line"></div>
+                              <div class="line"></div>
+                              <div class="line"></div>
+                              <div class="line"></div>
+                              <div class="line"></div>
+                            </button>
+                          </div>
+                          <div class="line"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="overlays"></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="frame-layer theme-dark">
-            <div class="mask maskTopOuter">
-              <div class="mask maskBottomOuter">
-                <div class="mask maskBottomInner">
-                  <div class="pad">
-                    <div class="content">
-                      <div class="line-outer"></div>
-                      <div class="top">
-                        <div class="hamburger">
-                          <button class="btnBurger">
-                            <svg fill="none" viewBox="0 0 27 6" class="iconBurger">
-                              <path d="M.867.711h25.634M.867 5.25h21.429"></path>
-                            </svg>
-                          </button>
-                        </div>
-                        <div class="bar">
-                          <div class="frameProgress">
-                            <div class="progressBar"></div>
-                            <div class="right-line"></div>
-                          </div>
-                          <div class="frameSubmenu">
-                            <div class="submenu">
-                              <button>PROJECT</button>
-                              <button>THE KEEP</button>
-                              <button>FACTION</button>
-                              <button>THE WORLD</button>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="widgetLogin">
-                          <button class="loginBtn">SIGN IN</button>
-                        </div>
-                        <div class="line"></div>
-                      </div>
-                      <div class="left">
-                        <div class="logo">
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 102" class="iconMark">
-                            <path fill-rule="evenodd"
-                              d="M17.958 70.176c0 .873.708 1.581 1.581 1.581h2.799c.873 0 1.58.708 1.58 1.58V100.1c0 .873.709 1.58 1.582 1.58h2.799a1.58 1.58 0 0 0 1.58-1.58V73.338c0-.873.708-1.58 1.581-1.58h2.799a1.58 1.58 0 0 0 1.58-1.582V55.401c0-.873.709-1.581 1.582-1.581h14.83a1.58 1.58 0 0 0 1.58-1.58v-2.8a1.58 1.58 0 0 0-1.58-1.58h-14.83a1.58 1.58 0 0 1-1.581-1.581V31.503a1.58 1.58 0 0 0-1.581-1.58H31.46a1.58 1.58 0 0 1-1.58-1.581V1.58A1.58 1.58 0 0 0 28.298 0h-2.8a1.58 1.58 0 0 0-1.58 1.58v26.761a1.58 1.58 0 0 1-1.581 1.581h-2.799a1.58 1.58 0 0 0-1.58 1.581V46.28a1.58 1.58 0 0 1-1.582 1.58H1.581A1.58 1.58 0 0 0 0 49.44v2.8c0 .872.708 1.58 1.58 1.58h14.797c.873 0 1.581.708 1.581 1.58v14.776Zm7.537-40.286a1.58 1.58 0 0 0-1.58 1.58v14.804a1.58 1.58 0 0 1-1.581 1.581h-2.8a1.58 1.58 0 0 0-1.58 1.581v2.814c0 .873.708 1.58 1.58 1.58h2.8c.873 0 1.58.709 1.58 1.581v14.79c0 .873.708 1.58 1.581 1.58h2.8a1.58 1.58 0 0 0 1.58-1.58V55.397c0-.873.708-1.581 1.581-1.581h2.799a1.58 1.58 0 0 0 1.58-1.581v-2.788a1.58 1.58 0 0 0-1.58-1.58h-2.799a1.58 1.58 0 0 1-1.58-1.581V31.47a1.58 1.58 0 0 0-1.582-1.58h-2.799Z"
-                              clip-rule="evenodd"></path>
-                          </svg>
-                        </div>
-                        <div class="bottom">
-                          <button class="btnAudio">
-                            <div class="line"></div>
-                            <div class="line"></div>
-                            <div class="line"></div>
-                            <div class="line"></div>
-                            <div class="line"></div>
-                          </button>
-                        </div>
-                        <div class="line"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="overlays"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
 
@@ -324,19 +732,327 @@
         <div class="homePage">
           <div class="landingRef ref" data-ui="landingRef"></div>
           <div class="projectIntroRef ref" data-ui="projectIntroRef"></div>
-          <div class="projectStoryRef ref" data-ui="projectStoryRef" style="background-color: lightgreen;"></div>
-          <div class="collectionIntroRef ref" data-ui="collectionIntroRef" style="background-color: yellow;"></div>
-          <div class="collectionGalleryRef ref" data-ui="collectionGalleryRef" style="background-color: purple;"></div>
-          <div class="keepRef ref" data-ui="keepRef" style="background-color: orange;">
+          <div class="projectStoryRef ref" data-ui="projectStoryRef"></div>
+          <div class="collectionIntroRef ref" data-ui="collectionIntroRef"></div>
+          <div class="collectionGalleryRef ref" data-ui="collectionGalleryRef"></div>
+          <!-- <div class="keepRef ref" data-ui="keepRef" style="background-color: orange;">
             <div id="keep" class="keepScrollTo"></div>
-          </div>
-          <div class="factionRef ref" data-ui="factionRef" style="background-color: pink;">
+          </div> -->
+          <!-- <div class="factionRef ref" data-ui="factionRef" style="background-color: pink;">
             <div id="faction" class="factionScrollTo"></div>
-          </div>
-          <div class="universeRef ref" data-ui="universeRef" style="background-color: brown;">
+          </div> -->
+          <!-- <div class="universeRef ref" data-ui="universeRef" style="background-color: brown;">
             <div id="universe" class="universeScrollTo"></div>
-          </div>
+          </div> -->
           <div class="launchRef ref" data-ui="launchRef" style="background-color: gray;"></div>
+        </div>
+        <div class="the-footer relative storyblok__outline" frame="dark" data-v-865b440e="" data-blok-c="undefined"
+          data-blok-uid="undefined">
+          <div class="inner" data-v-865b440e="">
+            <div class="section top flex-row" data-v-865b440e="">
+              <div class="item misc" data-v-865b440e="">
+                <div class="head" data-v-865b440e=""></div>
+                <div class="foot" data-v-865b440e="">
+                  <pre data-v-865b440e="">
+                    <div class="hacky-text relative console-preview" data-v-865b440e="" data-v-a07065fc="">
+                    <div class="spacer" data-v-a07065fc=""><!--[-->
+                        <!-- // initializing
+            new files in database
+            
+                kai_53815.jpg
+                audio_log_2018116.wav
+            
+            activate console for access... -->
+            <!--]-->
+          </div>
+          <div class="animation" data-v-a07065fc="">// INITIALIZING
+            NEW FILES IN DATABASE
+            
+                KAI_53815.JPG
+                AUDIO_LOG_2018116.WAV
+            
+            ACTIVATE CONSOLE FOR ACCESS...
+          </div>
+        </div></pre>
+                </div>
+              </div>
+              <div class="divider" data-v-865b440e=""></div>
+              <div class="item nav" data-v-865b440e="">
+                <div class="head" data-v-865b440e="">
+                  <div class="dot-caption singleLine type-caption3" data-v-865b440e="" data-v-52142dbe="">
+                    <div class="dot" data-v-52142dbe="" data-v-5da3ac80=""></div><span class="link-hover disabled"
+                      data-v-52142dbe="" data-v-c9d7fb4d="">
+                      <div class="bg" style="background: rgb(255, 255, 255);" data-v-c9d7fb4d=""></div><span
+                        class="content" data-v-c9d7fb4d=""><!--[-->
+                        <div class="hacky-text relative" data-v-52142dbe="" data-v-a07065fc="">
+                          <div class="spacer" data-v-a07065fc=""><!--[--><!--[-->Discover More<!--]--><!--]--></div>
+                          <div class="animation" data-v-a07065fc="">DISCOVER MORE</div>
+                        </div><!--]-->
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="foot" data-v-865b440e=""><!--[--><span
+                    class="link-hover footer-link active footer-link active" style="" data-v-865b440e=""
+                    data-v-cb9c08f0="" data-v-c9d7fb4d="">
+                    <div class="bg" style="transform: translate(0%, 0px); background: rgb(255, 255, 255);"
+                      data-v-c9d7fb4d=""></div><span class="content" data-v-c9d7fb4d=""
+                      style="color: rgb(0, 0, 0);"><!--[--><a href="/" rel="noopener noreferrer"
+                        class="link pointer-events-none" data-v-cb9c08f0="">
+                        <div class="hover-sfx" data-v-cb9c08f0="" data-v-b9f40bd3=""><!--[-->
+                          <div class="hacky-text relative" data-v-cb9c08f0="" data-v-a07065fc="">
+                            <div class="spacer" data-v-a07065fc=""><!--[-->Story<!--]--></div>
+                            <div class="animation" data-v-a07065fc="">STORY</div>
+                          </div><!----><!--]-->
+                        </div>
+                      </a><!--]--></span>
+                  </span><span class="link-hover footer-link footer-link" style="" data-v-865b440e="" data-v-cb9c08f0=""
+                    data-v-c9d7fb4d="">
+                    <div class="bg" style="background: rgb(255, 255, 255); transform: translate(101%, 0px);"
+                      data-v-c9d7fb4d=""></div><span class="content" data-v-c9d7fb4d=""
+                      style="color: rgb(255, 255, 255);"><!--[--><a href="/journal" class="link pointer-events-auto"
+                        data-v-cb9c08f0="">
+                        <div class="hover-sfx" data-v-cb9c08f0="" data-v-b9f40bd3=""><!--[-->
+                          <div class="hacky-text relative" data-v-cb9c08f0="" data-v-a07065fc="">
+                            <div class="spacer" data-v-a07065fc=""><!--[-->Journal<!--]--></div>
+                            <div class="animation" data-v-a07065fc="">JOURNAL</div>
+                          </div><!----><!--]-->
+                        </div>
+                      </a><!--]--></span>
+                  </span><span class="link-hover footer-link footer-link" style="" data-v-865b440e="" data-v-cb9c08f0=""
+                    data-v-c9d7fb4d="">
+                    <div class="bg" style="background: rgb(255, 255, 255); transform: translate(101%, 0px);"
+                      data-v-c9d7fb4d=""></div><span class="content" data-v-c9d7fb4d=""
+                      style="color: rgb(255, 255, 255);"><!--[--><a href="/media" class="link pointer-events-auto"
+                        data-v-cb9c08f0="">
+                        <div class="hover-sfx" data-v-cb9c08f0="" data-v-b9f40bd3=""><!--[-->
+                          <div class="hacky-text relative" data-v-cb9c08f0="" data-v-a07065fc="">
+                            <div class="spacer" data-v-a07065fc=""><!--[-->Media<!--]--></div>
+                            <div class="animation" data-v-a07065fc="">MEDIA</div>
+                          </div><!----><!--]-->
+                        </div>
+                      </a><!--]--></span>
+                  </span><span class="link-hover footer-link footer-link" style="" data-v-865b440e="" data-v-cb9c08f0=""
+                    data-v-c9d7fb4d="">
+                    <div class="bg" style="background: rgb(255, 255, 255); transform: translate(101%, 0px);"
+                      data-v-c9d7fb4d=""></div><span class="content" data-v-c9d7fb4d=""
+                      style="color: rgb(255, 255, 255);"><!--[--><a href="/gallery" class="link pointer-events-auto"
+                        data-v-cb9c08f0="">
+                        <div class="hover-sfx" data-v-cb9c08f0="" data-v-b9f40bd3=""><!--[-->
+                          <div class="hacky-text relative" data-v-cb9c08f0="" data-v-a07065fc="">
+                            <div class="spacer" data-v-a07065fc=""><!--[-->Gallery<!--]--></div>
+                            <div class="animation" data-v-a07065fc="">GALLERY</div>
+                          </div><!----><!--]-->
+                        </div>
+                      </a><!--]--></span>
+                  </span><span class="link-hover footer-link footer-link" style="" data-v-865b440e="" data-v-cb9c08f0=""
+                    data-v-c9d7fb4d="">
+                    <div class="bg" style="background: rgb(255, 255, 255); transform: translate(101%, 0px);"
+                      data-v-c9d7fb4d=""></div><span class="content" data-v-c9d7fb4d=""
+                      style="color: rgb(255, 255, 255);"><!--[--><a href="/about" class="link pointer-events-auto"
+                        data-v-cb9c08f0="">
+                        <div class="hover-sfx" data-v-cb9c08f0="" data-v-b9f40bd3=""><!--[-->
+                          <div class="hacky-text relative" data-v-cb9c08f0="" data-v-a07065fc="">
+                            <div class="spacer" data-v-a07065fc=""><!--[-->About<!--]--></div>
+                            <div class="animation" data-v-a07065fc="">ABOUT</div>
+                          </div><!----><!--]-->
+                        </div>
+                      </a><!--]--></span>
+                  </span><span class="link-hover footer-link footer-link" style="" data-v-865b440e="" data-v-cb9c08f0=""
+                    data-v-c9d7fb4d="">
+                    <div class="bg" style="background: rgb(255, 255, 255); transform: translate(101%, 0px);"
+                      data-v-c9d7fb4d=""></div><span class="content" data-v-c9d7fb4d=""
+                      style="color: rgb(255, 255, 255);"><!--[--><a href="https://kpr.homerun.co/?lang=en"
+                        rel="noopener noreferrer" class="link pointer-events-auto" data-v-cb9c08f0="">
+                        <div class="hover-sfx" data-v-cb9c08f0="" data-v-b9f40bd3=""><!--[-->
+                          <div class="hacky-text relative" data-v-cb9c08f0="" data-v-a07065fc="">
+                            <div class="spacer" data-v-a07065fc=""><!--[-->Careers<!--]--></div>
+                            <div class="animation" data-v-a07065fc="">CAREERS</div>
+                          </div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 9"
+                            class="icon-external" data-v-cb9c08f0="">
+                            <path d="M1.453 8.237 8.765.89" class="stroke"></path>
+                            <path
+                              d="M1.508.195h-.5v1h7.486v.684l1-1.086V.695a.5.5 0 0 0-.5-.5H1.508ZM9.494 3.26l-1 1.29v4.132h1V3.26Z"
+                              class="fill" clip-rule="evenodd"></path>
+                          </svg><!--]-->
+                        </div>
+                      </a><!--]--></span>
+                  </span><!--]--></div>
+              </div>
+              <div class="divider" data-v-865b440e=""></div>
+              <div class="item social" data-v-865b440e="">
+                <div class="head" data-v-865b440e="">
+                  <div class="dot-caption singleLine type-caption3" data-v-865b440e="" data-v-52142dbe="">
+                    <div class="dot" data-v-52142dbe="" data-v-5da3ac80=""></div><span class="link-hover disabled"
+                      data-v-52142dbe="" data-v-c9d7fb4d="">
+                      <div class="bg" style="background: rgb(255, 255, 255);" data-v-c9d7fb4d=""></div><span
+                        class="content" data-v-c9d7fb4d=""><!--[-->
+                        <div class="hacky-text relative" data-v-52142dbe="" data-v-a07065fc="">
+                          <div class="spacer" data-v-a07065fc=""><!--[--><!--[-->Join the Conversation<!--]--><!--]-->
+                          </div>
+                          <div class="animation" data-v-a07065fc="">JOIN THE CONVERSATION</div>
+                        </div><!--]-->
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="foot" data-v-865b440e=""><!--[--><span class="link-hover" data-v-865b440e=""
+                    data-v-c9d7fb4d="">
+                    <div class="bg" style="background: rgb(255, 255, 255); transform: translate(101%, 0px);"
+                      data-v-c9d7fb4d=""></div><span class="content" data-v-c9d7fb4d=""
+                      style="color: rgb(255, 255, 255);"><!--[--><a href="https://twitter.com/KPRVERSE"
+                        rel="noopener noreferrer" target="_blank" class="link" data-v-865b440e="">
+                        <div class="hover-sfx" data-v-865b440e="" data-v-b9f40bd3=""><!--[-->
+                          <div class="hacky-text relative" data-v-865b440e="" data-v-a07065fc="">
+                            <div class="spacer" data-v-a07065fc=""><!--[-->Twitter<!--]--></div>
+                            <div class="animation" data-v-a07065fc="">TWITTER</div>
+                          </div><!--]-->
+                        </div>
+                      </a><!--]--></span>
+                  </span><span class="link-hover" data-v-865b440e="" data-v-c9d7fb4d="">
+                    <div class="bg" style="background: rgb(255, 255, 255); transform: translate(101%, 0px);"
+                      data-v-c9d7fb4d=""></div><span class="content" data-v-c9d7fb4d=""
+                      style="color: rgb(255, 255, 255);"><!--[--><a href="https://discord.com/invite/kpr"
+                        rel="noopener noreferrer" target="_blank" class="link" data-v-865b440e="">
+                        <div class="hover-sfx" data-v-865b440e="" data-v-b9f40bd3=""><!--[-->
+                          <div class="hacky-text relative" data-v-865b440e="" data-v-a07065fc="">
+                            <div class="spacer" data-v-a07065fc=""><!--[-->Discord<!--]--></div>
+                            <div class="animation" data-v-a07065fc="">DISCORD</div>
+                          </div><!--]-->
+                        </div>
+                      </a><!--]--></span>
+                  </span><!--]--></div>
+              </div>
+              <div class="divider" data-v-865b440e=""></div>
+              <div class="item press" data-v-865b440e="">
+                <div class="head" data-v-865b440e="">
+                  <div class="dot-caption singleLine type-caption3" data-v-865b440e="" data-v-52142dbe="">
+                    <div class="dot" data-v-52142dbe="" data-v-5da3ac80=""></div><span class="link-hover disabled"
+                      data-v-52142dbe="" data-v-c9d7fb4d="">
+                      <div class="bg" style="background: rgb(255, 255, 255);" data-v-c9d7fb4d=""></div><span
+                        class="content" data-v-c9d7fb4d=""><!--[-->
+                        <div class="hacky-text relative" data-v-52142dbe="" data-v-a07065fc="">
+                          <div class="spacer" data-v-a07065fc=""><!--[--><!--[-->More Details<!--]--><!--]--></div>
+                          <div class="animation" data-v-a07065fc="">MORE DETAILS</div>
+                        </div><!--]-->
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="foot type-caption3" data-v-865b440e="">
+                  <div data-v-865b440e="">
+                    <div class="desc" data-v-865b440e="">Contact us at</div><span class="link-hover" data-v-865b440e=""
+                      data-v-c9d7fb4d="">
+                      <div class="bg" style="background: rgb(255, 255, 255); transform: translate(101%, 0px);"
+                        data-v-c9d7fb4d=""></div><span class="content" data-v-c9d7fb4d=""
+                        style="color: rgb(255, 255, 255);"><!--[--><a class="email type-caption3"
+                          href="mailto:hello@kprverse.com" target="_blank" data-v-865b440e="">
+                          <div class="hover-sfx" data-v-865b440e="" data-v-b9f40bd3=""><!--[-->
+                            <div class="hacky-text relative" data-v-865b440e="" data-v-a07065fc="">
+                              <div class="spacer" data-v-a07065fc=""><!--[-->hello@kprverse.com<!--]--></div>
+                              <div class="animation" data-v-a07065fc="">HELLO@KPRVERSE.COM</div>
+                            </div><!--]-->
+                          </div>
+                        </a><!--]--></span>
+                    </span>
+                  </div><button class="btn-main type-btn theme-dark btn-presskit relative btn-presskit relative"
+                    download="" data-v-865b440e="" data-v-0013393a="">
+                    <div class="flip bg full" data-v-0013393a="">
+                      <div class="inner full flex-row" data-v-0013393a=""><svg xmlns="http://www.w3.org/2000/svg"
+                          fill="none" viewBox="0 0 246 51" class="svg-back" data-v-0013393a="" width="246px"
+                          height="51px">
+                          <path
+                            d="M 0 4 Q 0 0, 5 0L 242 0 Q 246 0, 246 4L 246 37 Q 246 38, 244 41L 238 47 Q 235 50, 232 51L 4 51 Q 0 51, 0 47L 0 4"
+                            class="path"></path>
+                        </svg></div>
+                    </div>
+                    <div class="content relative flex-row" data-v-0013393a="">
+                      <div class="left" data-v-0013393a=""><!--[--><svg xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 55.86 63.63" class="icon-download icon-deep icon" data-v-865b440e=""
+                          data-v-83c5041f="">
+                          <path
+                            d="m54.89 26.96-3.53-3.53-14.2 14.2.03 7.04 17.7-17.71zM0 58.63h55.86v5H0zM27.36 52c.88 0 1.93-.38 3.1-1.54l-.06-.06h.03V0h-5v44.36L4.5 23.43.96 26.97l23.96 23.96c.35.35 1.22 1.07 2.44 1.07Z">
+                          </path>
+                        </svg><!--]--></div>
+                      <div class="hacky-text relative" data-v-0013393a="" data-v-a07065fc="">
+                        <div class="spacer" data-v-a07065fc=""><!--[--><!--[--><span data-v-865b440e="">Download Brand
+                            Book</span><!--]--><!--]--></div>
+                        <div class="animation" data-v-a07065fc="">DOWNLOAD BRAND BOOK</div>
+                      </div>
+                      <div class="right" data-v-0013393a=""><!--[--><!--]--></div>
+                    </div><a class="full" href="https://a.storyblok.com/f/165555/x/095e8b5319/kpr_brandbook_v1-0.zip"
+                      target="_blank" data-v-0013393a=""></a>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="pointer-events-none" data-v-865b440e="">
+              <div class="y" data-v-865b440e="" style="transform: translate3d(0px, -599.999px, 0px);">
+                <div class="mask-outer" data-v-865b440e="" style="transform: translate3d(0px, 70.5052%, 0px);">
+                  <div class="mask-inner" data-v-865b440e="" style="transform: translate3d(0px, -70.5052%, 0px);">
+                    <div class="section kpr" data-v-865b440e=""><img src="/_nuxt/footer_kpr.034b6b12.svg?inline"
+                        data-v-865b440e=""></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="section bottom flex-row type-caption3" data-v-865b440e=""
+              style="transform: translate3d(0px, -599.999px, 0px);">
+              <div class="left desktop-only" data-v-865b440e=""><button class="btn-region" data-v-865b440e=""
+                  data-v-24bf0e3f="">
+                  <div class="label" data-v-24bf0e3f="">EN</div><svg xmlns="http://www.w3.org/2000/svg"
+                    xml:space="preserve" style="enable-background:new 0 0 11 7;" viewBox="0 0 11 7"
+                    class="icon icon-deep" data-v-24bf0e3f="">
+                    <path d="M7.7 3.9 10.6 1M1 1l4.8 4.8" class="stroke"></path>
+                  </svg>
+                </button></div>
+              <div class="center type-caption2" data-v-865b440e=""><!--[--><span class="link-hover" data-v-865b440e=""
+                  data-v-c9d7fb4d="">
+                  <div class="bg" style="background: rgb(255, 255, 255); transform: translate(101%, 0px);"
+                    data-v-c9d7fb4d=""></div><span class="content" data-v-c9d7fb4d=""
+                    style="color: rgb(255, 255, 255);"><!--[--><a href="/legal/privacy-policy" class="link"
+                      data-v-865b440e="">
+                      <div class="hacky-text relative" data-v-865b440e="" data-v-a07065fc="">
+                        <div class="spacer" data-v-a07065fc=""><!--[-->Privacy Policy<!--]--></div>
+                        <div class="animation" data-v-a07065fc="">PRIVACY POLICY</div>
+                      </div>
+                    </a><!--]--></span>
+                </span><span class="link-hover" data-v-865b440e="" data-v-c9d7fb4d="">
+                  <div class="bg" style="background: rgb(255, 255, 255); transform: translate(101%, 0px);"
+                    data-v-c9d7fb4d=""></div><span class="content" data-v-c9d7fb4d=""
+                    style="color: rgb(255, 255, 255);"><!--[--><a href="/legal/terms-of-service" class="link"
+                      data-v-865b440e="">
+                      <div class="hacky-text relative" data-v-865b440e="" data-v-a07065fc="">
+                        <div class="spacer" data-v-a07065fc=""><!--[-->Terms of Service<!--]--></div>
+                        <div class="animation" data-v-a07065fc="">TERMS OF SERVICE</div>
+                      </div>
+                    </a><!--]--></span>
+                </span><span class="link-hover" data-v-865b440e="" data-v-c9d7fb4d="">
+                  <div class="bg" style="background: rgb(255, 255, 255); transform: translate(101%, 0px);"
+                    data-v-c9d7fb4d=""></div><span class="content" data-v-c9d7fb4d=""
+                    style="color: rgb(255, 255, 255);"><!--[--><a href="/legal/legal-license" class="link"
+                      data-v-865b440e="">
+                      <div class="hacky-text relative" data-v-865b440e="" data-v-a07065fc="">
+                        <div class="spacer" data-v-a07065fc=""><!--[-->Legal License<!--]--></div>
+                        <div class="animation" data-v-a07065fc="">LEGAL LICENSE</div>
+                      </div>
+                    </a><!--]--></span>
+                </span><!--]--></div>
+              <div class="right desktop-only" data-v-865b440e="">
+                <div class="copyright" data-v-865b440e="">© 2022</div>
+              </div>
+              <div class="foot mobile-only" data-v-865b440e=""><button class="btn-region" data-v-865b440e=""
+                  data-v-24bf0e3f="">
+                  <div class="label" data-v-24bf0e3f="">EN</div><svg xmlns="http://www.w3.org/2000/svg"
+                    xml:space="preserve" style="enable-background:new 0 0 11 7;" viewBox="0 0 11 7"
+                    class="icon icon-deep" data-v-24bf0e3f="">
+                    <path d="M7.7 3.9 10.6 1M1 1l4.8 4.8" class="stroke"></path>
+                  </svg>
+                </button>
+                <div class="copyright" data-v-865b440e="">© 2022</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

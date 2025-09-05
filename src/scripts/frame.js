@@ -2,6 +2,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    const frameFull = document.querySelector('.frame-container .full');
     const frameLayers = document.querySelectorAll(".frame-layer");
     const farmeLayerLight = document.querySelector('.frame-layer.theme-light');
     const farmeLayerDark = document.querySelector('.frame-layer.theme-dark');
@@ -9,17 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {
     farmeLayerLight.style.opacity = 1;
     farmeLayerDark.style.opacity = 0;
 
-    frameLayers.forEach(frameLayer => {
-        ScrollTrigger.create({
-            trigger: frameLayer,
-            start: "top top",
-            end: () => `top+=${document.body.scrollHeight} bottom`,
-            pin: true,
-            pinSpacing: false,
-            scrub: true,
-        });
+    ScrollTrigger.create({
+        trigger: frameFull,
+        start: "top top",
+        end: () => `top+=${document.body.scrollHeight} bottom`,
+        pin: true,
+        pinSpacing: false,
+        scrub: true,
     });
-
 
     const homePage = document.querySelector('.homePage')
     const progressBars = document.querySelectorAll('.progressBar');

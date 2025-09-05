@@ -60,5 +60,6 @@
 }
 
 .homePage .launchRef {
-  height: 150vh;
+  /* height: 150vh; */
+  height: 250vh;
 }

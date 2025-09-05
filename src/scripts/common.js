@@ -50,6 +50,12 @@ function setupThemeObserver() {
       onLeave: () => {
         section.style.pointerEvents = 'none';
       },
+      onEnterBack: () => {
+        section.style.pointerEvents = 'auto';
+      },
+      onLeaveBack: () => {
+        section.style.pointerEvents = 'none';
+      },
     });
 
     ScrollTrigger.create({
@@ -59,13 +65,12 @@ function setupThemeObserver() {
       onUpdate: (self) => {
         const progress = self.progress;
 
-
         if (section.classList.contains('lightTheme')) {
-          farmeLayerLight.style.opacity = progress;
-          farmeLayerDark.style.opacity = 1 - progress;
+          farmeLayerLight.style.opacity = progress * 1.1;
+          farmeLayerDark.style.opacity = (1 - progress) * 1.1;
         } else if (section.classList.contains('darkTheme')) {
-          farmeLayerLight.style.opacity = 1 - progress;
-          farmeLayerDark.style.opacity = progress;
+          farmeLayerLight.style.opacity = (1 - progress) * 1.1;
+          farmeLayerDark.style.opacity = progress * 1.1;
         }
       },
     });

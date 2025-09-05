@@ -79,11 +79,27 @@ let targetMaskRotationY = 0; // 마스크 Y축 회전
 let currentMaskRotationX = 0; // 마스크 현재 X축 회전
 let currentMaskRotationY = 0; // 마스크 현재 Y축 회전
 
+// 스크롤 애니메이션 전용 변수들
+let scrollCameraX = 0; // 스크롤로 인한 카메라 X 위치
+let scrollCameraY = 0; // 스크롤로 인한 카메라 Y 위치
+let scrollMaskRotationX = 0; // 스크롤로 인한 마스크 X 회전
+let scrollMaskRotationY = 0; // 스크롤로 인한 마스크 Y 회전
+
+// 카메라 Z축 관리 전용 변수
+let finalCameraZ = 3; // 최종 카메라 Z 위치
+
+// 스케일 애니메이션 전용 변수들 (충돌 방지)
+let baseModelScale = 1.0; // 첫 번째 애니메이션의 기본 스케일
+let additionalModelScale = 1.0; // 두 번째 애니메이션의 추가 스케일
+let baseMaskScale = 1.0; // 첫 번째 애니메이션의 기본 마스크 스케일
+let additionalMaskScale = 1.0; // 두 번째 애니메이션의 추가 마스크 스케일
+
 // 스크롤 애니메이션을 위한 변수들
 let currentModel = null;
 let currentMaskMesh = null;
 let initialCameraZ = 3; // 초기 카메라 z 위치
 let initialMaskScale = 0.007; // 초기 마스크 스케일
+let updatedCameraZ = 0;
 
 // 수직 회전 제한 (위아래 회전 범위를 극도로 작게)
 controls.minPolarAngle = Math.PI / 2 - Math.PI / 24; // 위쪽 제한
@@ -271,62 +287,36 @@ window.addEventListener("mousemove", (event) => {
   targetMaskRotationY = -mouseX * dynamicRangeX * maskRotationMultiplier * 0.3;
 });
 
+const landingRef = document.querySelector(".landingRef");
+const landingHeight = landingRef.getBoundingClientRect().height;
+const projectStoryRef = document.querySelector(".projectStoryRef");
+const projectStoryHeight = projectStoryRef.getBoundingClientRect().height;
+
 // 스크롤 애니메이션 설정
 function setupScrollAnimation() {
+  // landingRef 범위
   gsap.to(
     {},
     {
       scrollTrigger: {
         trigger: "body",
         start: "top top",
-        end: `+=${window.innerHeight}`,
+        end: `+=${landingHeight}`,
         scrub: 1,
         onUpdate: (self) => {
-          // 스크롤 진행률에 따라 카메라 z 위치 계산 (3에서 10으로)
           const progress = self.progress;
-
           currentScrollProgress = self.progress;
 
+          // 스크롤 진행률에 따라 카메라 z 위치 계산 (3에서 10으로)
           const targetCameraZ = initialCameraZ + progress * 7; // 3 -> 10
+          updatedCameraZ = targetCameraZ;
+          finalCameraZ = targetCameraZ; // 최종 카메라 Z 위치 업데이트
 
-          // 카메라 z 위치 업데이트
-          camera.position.z = targetCameraZ;
-
-          // 마스크 크기 조정 (중앙을 중심으로 약간 작아짐)
+          // 첫 번째 애니메이션: 마스크 크기와 위치 조정
           if (currentMaskMesh) {
-            const maskScale = 1 - progress * 0.5; // 1 -> 0.5 (50% 작아짐)
-
-            // 마스크의 원래 중심점 저장
-            const originalMaskCenter = new THREE.Vector3();
-            const maskBox = new THREE.Box3().setFromObject(currentMaskMesh);
-            maskBox.getCenter(originalMaskCenter);
-
-            // 마스크 스케일 적용
-            currentMaskMesh.scale.set(
-              maskScale * initialMaskScale,
-              -maskScale * initialMaskScale,
-              maskScale
-            );
-
+            baseMaskScale = 1 - progress * 0.5; // 1 -> 0.5 (50% 작아짐)
             const targetY = -0.1 - (progress * 0.6); // -0.1에서 -0.7까지 변화
             currentMaskMesh.position.y = targetY;
-
-            // 스케일 변경 후 새로운 중심점 계산
-            const newMaskBox = new THREE.Box3().setFromObject(currentMaskMesh);
-            const newMaskCenter = new THREE.Vector3();
-            newMaskBox.getCenter(newMaskCenter);
-
-            // 중심점 차이만큼 위치 조정하여 원래 중심 유지
-            const centerOffset = new THREE.Vector3();
-            centerOffset.subVectors(originalMaskCenter, newMaskCenter);
-            currentMaskMesh.position.add(centerOffset);
-
-            // 중심점 조정 후 y 위치 재설정 (중요!)
-            currentMaskMesh.position.y = targetY;
-
-            // 카메라가 항상 (0, 0, 0)을 바라보도록 설정
-            camera.lookAt(0, 0, 0);
-
           }
 
           if (currentModel) {
@@ -346,6 +336,43 @@ function setupScrollAnimation() {
       },
     }
   );
+
+  // projectStoryRef 범위
+  gsap.to(
+    {},
+    {
+      scrollTrigger: {
+        trigger: projectStoryRef,
+        start: "top 80%",
+        end: `+=${projectStoryHeight * 0.4}`,
+        scrub: 1,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          currentScrollProgress = -progress;
+
+          const targetCameraZ = updatedCameraZ - progress * 7; // 10 -> 3
+          finalCameraZ = targetCameraZ; // 최종 카메라 Z 위치 업데이트
+
+          // 스크롤 전용 변수에 저장 (마우스 이벤트와 분리)
+          scrollCameraX = progress * Math.PI * 1.5; // X축 카메라 이동
+          scrollCameraY = -progress * Math.PI; // Y축 카메라 이동
+          scrollMaskRotationX = -progress * Math.PI / 40; // X축 마스크 회전
+          scrollMaskRotationY = -progress * Math.PI; // Y축 마스크 회전
+
+          // 두 번째 애니메이션: 추가 스케일 설정
+          additionalModelScale = 1.0 + progress * 2; // 1.0에서 1.5까지 추가 확대
+          additionalMaskScale = 1.0 + progress * 6; // 마스크도 약간 확대
+
+          if (scrollMaskRotationY < -1.5) {
+            canvasContainer.style.opacity = 0;
+          } else {
+            canvasContainer.style.opacity = 1;
+          }
+
+        }
+      },
+    },
+  );
 }
 
 function animate() {
@@ -360,15 +387,29 @@ function animate() {
   currentMaskRotationX += (targetMaskRotationX - currentMaskRotationX) * 0.08;
   currentMaskRotationY += (targetMaskRotationY - currentMaskRotationY) * 0.08;
 
-  // 카메라 위치 업데이트 (x, y만 변경, z는 스크롤에 따라 변경됨)
-  camera.position.x = currentCameraX;
-  camera.position.y = currentCameraY;
-  // z 위치는 스크롤 애니메이션에서 제어됨
+  // 카메라 위치 업데이트 (마우스 + 스크롤 효과 결합)
+  camera.position.x = currentCameraX + scrollCameraX; // 마우스 X + 스크롤 X 효과
+  camera.position.y = currentCameraY + scrollCameraY; // 마우스 Y + 스크롤 Y 효과
+  camera.position.z = finalCameraZ; // 최종 카메라 Z 위치 적용
 
-  // 마스크 회전 업데이트 (위치 대신)
+  // 마스크 회전 및 스케일 업데이트 (마우스 + 스크롤 효과 결합)
   if (currentMaskMesh) {
-    currentMaskMesh.rotation.x = currentMaskRotationX;
-    currentMaskMesh.rotation.y = currentMaskRotationY;
+    currentMaskMesh.rotation.x = currentMaskRotationX + scrollMaskRotationX; // 마우스 X + 스크롤 X 회전
+    currentMaskMesh.rotation.y = currentMaskRotationY + scrollMaskRotationY; // 마우스 Y + 스크롤 Y 회전
+
+    // 최종 마스크 스케일 적용 (첫 번째 + 두 번째 애니메이션)
+    const finalMaskScale = baseMaskScale * additionalMaskScale;
+    currentMaskMesh.scale.set(
+      finalMaskScale * initialMaskScale,
+      -finalMaskScale * initialMaskScale,
+      finalMaskScale
+    );
+  }
+
+  // 모델 스케일 업데이트 (첫 번째 + 두 번째 애니메이션)
+  if (currentModel) {
+    const finalModelScale = baseModelScale * additionalModelScale;
+    currentModel.scale.set(finalModelScale, finalModelScale, finalModelScale);
   }
 
   // 카메라가 항상 (0, 0, 0)을 바라보도록 설정
@@ -377,4 +418,5 @@ function animate() {
   // renderer.render(scene, camera); // 이 줄을 아래로 변경
   composer.render();
 }
+
 animate();

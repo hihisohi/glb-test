@@ -59,6 +59,15 @@ body {
   clip-path: inset(var(--topMargin) 0 var(--sideMargin) 0);
 }
 
+.fixed-footer-container {
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 .sectionInner {
   padding: var(--sideMargin);
   padding-top: calc(var(--sideMargin) + var(--headerHeight));
