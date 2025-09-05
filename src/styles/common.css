@@ -59,7 +59,7 @@ body {
   clip-path: inset(var(--topMargin) 0 var(--sideMargin) 0);
 }
 
-.fixed-footer-container {
+.foot-container {
   height: 100%;
   left: 0;
   pointer-events: none;

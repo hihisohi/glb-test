@@ -454,33 +454,58 @@ document.addEventListener("DOMContentLoaded", () => {
   const launchHeight = launchRef.getBoundingClientRect().height;
   const launchSection = document.querySelector(".homeLaunch");
 
+  const singleCards = document.querySelectorAll(".singleCard");
+
   launchSection.style.transform = `translateY(${window.innerHeight}px)`;
 
   ScrollTrigger.create({
     trigger: launchRef,
     start: "top bottom",
-    end: `+=${launchHeight}`,
+    end: `+=${launchHeight * 2}`,
     scrub: true,
     onUpdate: (self) => {
       const progress = self.progress;
 
-      if (progress > 0.3) {
-        collectionGallerySection.style.transform = `translateY(-${(progress - 0.3) / 0.7 * window.innerHeight}px)`;
+      launchSection.style.transform = `translateY(${window.innerHeight - launchHeight * progress}px)`;
 
-        collectionGalleryBottom.style.transform = `rotateY(${Math.min((progress - 0.3) / 0.2, 1) * -90}deg)`;
+      if (progress > 0.15) {
+        collectionGallerySection.style.transform = `translateY(-${(progress - 0.15) / 0.7 * window.innerHeight}px)`;
 
-        if ((progress - 0.3) / 0.2 > 1) {
+        collectionGalleryBottom.style.transform = `rotateY(${Math.min((progress - 0.15) / 0.1, 1) * -90}deg)`;
+
+        if ((progress - 0.15) / 0.1 > 1) {
           collectionGalleryBottom.style.opacity = 0;
         } else {
           collectionGalleryBottom.style.opacity = 1;
         }
+
+
+        homeCollectionIntroRectItems.forEach((item, index) => {
+          item.style.opacity = 1 - (progress - 0.15) / 0.2;
+        });
+
+      }
+
+      if (progress > 0.25) {
+        const singleCardProgress = (progress - 0.25) / 0.1;
+
+        singleCards.forEach((card, index) => {
+          card.style.transform = `
+          translate(-50%, -50%)
+          rotateY(${-90 + Math.min(singleCardProgress * 90, 90)}deg) `;
+
+          card.style.opacity = 1;
+        });
+      } else {
+        singleCards.forEach((card, index) => {
+          card.style.opacity = 0;
+        });
       }
 
 
-
-      launchSection.style.transform = `translateY(${Math.max(window.innerHeight - launchHeight * progress, 0)}px)`;
-
-
+      if (progress > 0.5) {
+        launchSection.style.opacity = Math.max(1 - (progress - 0.5) / 0.1, 0);
+      }
     }
   });
 

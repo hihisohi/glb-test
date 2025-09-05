@@ -382,12 +382,9 @@
   opacity: 0;
 }
 
-
-
 .collectionGallery {
   transform: translate(0, -180%)
 }
-
 
 
 /* 
@@ -395,4 +392,51 @@
 */
 .the-footer {
   height: var(--100ui, 100%);
+}
+
+.homeLaunch__inner {
+  position: relative;
+
+  width: 100%;
+  height: var(--100ui, 100%);
+
+  perspective: 1200px;
+  perspective-origin: center center;
+  transform-style: preserve-3d;
+}
+
+.singleCard {
+  position: absolute;
+
+  opacity: 0;
+}
+
+.singleCard--universe {
+  background: url('/assets/images/singlecard_universe.png') no-repeat center center / contain;
+
+  width: 400px;
+  height: 380px;
+  top: 44%;
+  left: 44%;
+  transform: translate(-50%, -50%) rotateY(-85deg);
+}
+
+.singleCard--keep {
+  background: url('/assets/images/singlecard_keep.png') no-repeat center center / contain;
+
+  width: 200px;
+  height: 400px;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%) rotateY(-90deg);
+}
+
+.singleCard--factions {
+  background: url('/assets/images/singlecard_factions.png') no-repeat center center / contain;
+
+  width: 400px;
+  height: 200px;
+  top: 75%;
+  left: 45%;
+  transform: translate(-50%, -50%) rotateY(-90deg);
 }
